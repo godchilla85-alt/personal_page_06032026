@@ -8,8 +8,6 @@
     />
     <Navigation />
 
-
-    <!-- Beispiel für dekorative Blobs -->
     <div class="absolute top-[-10%] -left-[20%] w-[50vw] h-[50vw] rounded-full bg-[#3150aa] opacity-45 blur-[240px] transform-gpu-blur"></div>
     <div class="absolute top-[10%] left-[80%] w-[30vw] h-[30vw] rounded-full bg-[#d6876d] opacity-45 blur-[250px] transform-gpu-blur"></div>
     
@@ -18,7 +16,7 @@
       <router-view />
 
 
-    
+
   </div>
 </template>
 <script setup>
@@ -31,8 +29,7 @@ import { ref, provide } from 'vue';
 
 const overlay = ref(null);
 
-// Wir stellen die Funktion global zur Verfügung, 
-// damit die Navigation sie nutzen kann
+
 provide('playTransition', (name, nav) => overlay.value.playTransition(name, nav));
 
 const particlesOptions = {
@@ -72,9 +69,10 @@ const particlesOptions = {
     }
   }
 };
+
 </script>
 <style>
-/* Wichtig: Sorge dafür, dass die Particles im Hintergrund liegen */
+
 #tsparticles {
   position: absolute;
   top: 0;

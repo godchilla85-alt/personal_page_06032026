@@ -17,13 +17,12 @@ const props = defineProps({
 });
 
 const handleNavigation = async (e) => {
-  // 1. WICHTIG: Wenn der Link extern ist, brich hier ab!
-  // Wir lassen das Standardverhalten des <a> Tags gewähren.
+
   if (isExternal.value) {
     return; 
   }
 
-  // 2. Verhindere normales Browserscrollen für interne Links
+
   e.preventDefault();
 
   if (props.href.startsWith('/#')) {
@@ -43,14 +42,12 @@ const handleNavigation = async (e) => {
       }
     } else {
       await router.push('/');
-      // Hinweis: nextTick müsste importiert werden, falls du es nutzt
       setTimeout(() => {
         const element = document.getElementById(hash);
         if (element) element.scrollIntoView({ behavior: "smooth" });
       }, 100);
     }
   } else {
-    // Nur für INTERNE Pfade (z.B. /about)
     router.push(props.href);
   }
 };

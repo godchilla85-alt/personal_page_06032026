@@ -20,7 +20,7 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  typed.destroy(); // Wichtig für die Performance!
+  typed.destroy();
 });
 </script>
 

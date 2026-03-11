@@ -6,7 +6,7 @@ const props = defineProps({
   href: { type: String, default: '#' }
 });
 
-// Prüfen, ob der Link extern ist
+
 const isExternal = computed(() => {
   return props.href.startsWith('http') || props.href.startsWith('//');
 });

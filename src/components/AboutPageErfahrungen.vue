@@ -54,7 +54,7 @@
 import { ref, onMounted } from 'vue';
 import Aos from 'aos';
 
-// AOS Initialisierung im Lifecycle Hook für bessere Performance in Vue
+
 onMounted(() => {
   Aos.init({ 
     once: true,

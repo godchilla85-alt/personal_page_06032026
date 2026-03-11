@@ -9,9 +9,7 @@ Aos.init({ once: true });
     data-aos='fade-up'
             data-aos-duration="2000"
             data-aos-delay="50">
-        <!-- <div class="absolute top-[-97%] -left-[40%] w-[50vw] h-[50vw] rounded-full bg-[#3150aa] opacity-45 blur-[240px] transform-gpu-blur"></div>
-        <div class="absolute top-[-55%] left-[30%] w-[50vw] h-[30vw] rounded-full bg-[#d6876d] opacity-45 blur-[250px] transform-gpu-blur"></div>
-         <div class="absolute top-[-30%] -left-[-70%] w-[30vw] h-[30vw] rounded-full bg-[#3150aa] opacity-45 blur-[240px] transform-gpu-blur"></div> -->
+        
         
         <div class="h-full flex flex-col p-10 relative z-10">
             

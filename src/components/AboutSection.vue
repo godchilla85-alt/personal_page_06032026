@@ -34,7 +34,7 @@ onMounted(() => {
 
     const words = aboutRef.value.querySelectorAll('.reveal-word');
     
-    // Prüfe kurz in der Konsole, ob er was gefunden hat
+
     console.log("Gefundene Wörter:", words.length); 
 
     if (words.length > 0) {
@@ -49,7 +49,7 @@ onMounted(() => {
           start: 'top 80%',
           end: 'bottom 60%',
           scrub: true,
-          markers: false // <--- AKTIVIERE DIES ZUM TESTEN!
+          markers: false 
         },
       });
     }
@@ -57,18 +57,18 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  // Aufräumen, um Memory Leaks zu verhindern
+
   if (splitInstance) splitInstance.revert();
   ScrollTrigger.getAll().forEach(t => t.kill());
 });
 const handleInternalNavigation = (e) => {
-  // 1. Verhindert das Standard-Scrollen/Springen des Browsers
+
   e.preventDefault(); 
   
-  // 2. Starte die elegante Transition
+
   playTransition('ABOUT', () => {
     router.push('/about');
-    // Der Scroll-to-top passiert hier erst, wenn der Vorhang zu ist!
+  
   });
 };
 </script>

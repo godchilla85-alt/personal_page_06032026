@@ -5,14 +5,14 @@ import Logo from '../assets/img/logo.png';
 import AnimatedLinkwoArrow from './AnimatedLinkwoArrow.vue';
 
 const router = useRouter();
-const route = useRoute(); // Aktuelle Route abfragen
+const route = useRoute(); 
 const playTransition = inject('playTransition');
 
 const handleLinkClick = (path, name) => {
   const isTargetHome = path === '/' || path.includes('/#');
   const isAlreadyOnHome = route.path === '/';
 
-  // Fall 1: Wir sind auf Home und wollen zu Home oder Home/#work -> NUR SCROLLEN
+ 
   if (isAlreadyOnHome && isTargetHome) {
     if (path.includes('#')) {
       const hash = path.split('#')[1];
@@ -24,7 +24,7 @@ const handleLinkClick = (path, name) => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   } 
-  // Fall 2: Wir sind auf einer anderen Seite (z.B. About) und wollen irgendwohin -> ANIMATION
+ 
   else {
     playTransition(name, () => router.push(path));
   }
@@ -32,7 +32,7 @@ const handleLinkClick = (path, name) => {
 </script>
 
 <template>
-    <nav class="sticky w-full top-0 z-50">
+    <nav class="sticky w-full top-0 z-100 bg-black/20 backdrop-blur-sm">
         <div class="pt-4 md:pb-8">
             <div class="container mx-auto px-4 md:px-6 lg:px-12">
                 <div class="flex items-center justify-between">

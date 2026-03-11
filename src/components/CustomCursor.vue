@@ -8,16 +8,16 @@ const HOVER_SELECTORS = [
   ".cursor-hover", "[data-cursor='hover']",
 ].join(",");
 
-// Reale Position (für den Punkt)
+
 const cursorX = ref(0);
 const cursorY = ref(0);
 
-// States
+
 const isClicking = ref(false);
 const hovered = ref(false);
 const isTouch = ref(false);
 
-// Refs für die verzögerte Animation (Border)
+
 const targetX = ref(0);
 const targetY = ref(0);
 const currentX = ref(0);
@@ -39,7 +39,7 @@ const move = (e) => {
 };
 
 const animate = () => {
-  const ease = 0.15; // Etwas höherer Wert für smoothere Verfolgung
+  const ease = 0.15;
   currentX.value += (targetX.value - currentX.value) * ease;
   currentY.value += (targetY.value - currentY.value) * ease;
 
@@ -112,7 +112,7 @@ onUnmounted(() => {
 </template>
 
 <style>
-/* Globaler Cursor-Reset */
+
 html, body, a, button, * {
   cursor: none !important;
 }
