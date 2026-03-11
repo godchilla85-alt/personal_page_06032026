@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-[50vh] px-10 flex flex-col justify-center items-center container relative mt-20 lg:flex-row">
+    <div class="min-h-[50vh] px-10 flex flex-col justify-center items-center container relative my-20 lg:flex-row">
         <div class="absolute top-[15%] -left-[20%] w-[50vw] h-[50vw] rounded-full bg-[#3150aa] opacity-45 blur-[240px] transform-gpu-blur"></div>
     <div class="absolute top-[15%] left-[30%] w-[50vw] h-[30vw] rounded-full bg-[#d6876d] opacity-45 blur-[250px] transform-gpu-blur"></div>
     <div class="absolute top-[20%] -left-[-70%] w-[80vw] h-[60vw] rounded-full bg-[#3150aa] opacity-45 blur-[240px] transform-gpu-blur"></div>
@@ -7,10 +7,9 @@
         data-aos='fade-up'
         data-aos-duration="2000"
         data-aos-delay="50">
-            <p class="text-4xl pr-0 lg:pr-10">Hi, Ich bin <span class="text-highlight-green">Sebastian Pohl,</span> Baujahr
-        85 und Webdesigner aus Hamburg. Seit 2015 baue ich interaktive Webseiten
-        und helfe Unternehmen, neue Features zu entwickeln und umzusetzen.
-        Sicherlich kann ich auch dir bei etwas helfen?</p>
+            <p class="text-4xl pr-0 lg:pr-10">Moinsen. Ich, Programmierer mit über 6 Jahren Erfahrung und einer großen Leidenschaft für Computer und die Technik dahinter. Mein Interesse begann bereits mit 15 Jahren, als ich angefangen habe, mich intensiver mit Computern zu beschäftigen. Seitdem habe ich unzählige Stunden auch privat investiert, um neue Technologien, Programmiersprachen und Programme zu lernen und mein Wissen ständig zu erweitern.
+
+In meiner Freizeit spiele ich gerne Games, verbringe Zeit mit meinem Familie, höre Musik oder fiebere bei Spielen des Hamburger SV mit. Manchmal genieße ich es aber auch einfach, zu entspannen und abzuschalten.</p>
                 <AnimatedLink text="Mein Resume"></AnimatedLink>
        
         </div>
