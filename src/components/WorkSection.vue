@@ -4,12 +4,14 @@ import Aos from 'aos';
 import movData from '../assets/img/movData-thumb.jpg';
 import shoeShop from '../assets/img/shoerus-thumb.jpg';
 import hamburgRedesign from '../assets/img/hamburg-redesign-thumb.jpg';
+import weatherApp from '../assets/img/weather_app_vue_thumb.png';
 import AnimatedLink from './AnimatedLink.vue';
 
 const workCards = ref([
     { title: "Shoe R Us UI Concept", type: "Concept, Interface", image: shoeShop, link: 'https://www.behance.net/gallery/245561621/SneakRus'},
     { title: "movData Concept", type: "Concept, Interface", image: movData, link: 'https://www.behance.net/gallery/115330089/movData-Movie-Database'},
-    { title: "Hamburg Redesign", type: "Concept, Interface", image: hamburgRedesign, link: 'https://www.behance.net/gallery/245567095/Hamburg-Redesign'}
+    { title: "Hamburg Redesign", type: "Concept, Interface", image: hamburgRedesign, link: 'https://www.behance.net/gallery/245567095/Hamburg-Redesign'},
+    { title: "Weather App", type: "Interface, Code", image: weatherApp, link: 'https://glistening-quokka-77aa6a.netlify.app/'},
 ]);
 
  Aos.init({ once: true });
@@ -22,7 +24,7 @@ const workCards = ref([
         <div
         v-for="(card, index) in workCards"
         :key="index"
-        class="top-20 p-5 bg-white/10 rounded-4xl backdrop-blur-sm mb-20 flex flex-row h-[30vh]"
+        class="top-20 p-5 bg-white/10 rounded-4xl backdrop-blur-sm mb-20 flex flex-row h-[35vh]"
         data-aos='fade-up'
                 data-aos-duration="2000"
                 data-aos-delay="500"
