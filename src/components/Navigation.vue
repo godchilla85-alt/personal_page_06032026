@@ -32,17 +32,17 @@ const handleLinkClick = (path, name) => {
 </script>
 
 <template>
-    <nav class="sticky w-full top-0 z-100 bg-black/20 backdrop-blur-sm">
+    <nav class="sticky w-full top-0 z-100 bg-black/20 backdrop-blur-sm h-40 lg:h-22">
         <div class="pt-4 md:pb-8">
             <div class="container mx-auto px-4 md:px-6 lg:px-12">
-                <div class="flex items-center justify-between">
+                <div class="flex flex-col lg:flex-row items-center justify-between">
                     <div class="h-fit">
                         <div @click="handleLinkClick('/', 'HOME')">
                             <img :src="Logo" alt="Logo" class="cursor-pointer">
                         </div>
                     </div>
                     <div class="flex items-center gap-x-4.25 h-9">
-                        <div class="items-center justify-center hidden lg:flex lg:gap-x-20">
+                        <div class="items-center justify-center flex gap-x-20 mt-10 lg:mt-0">
                             <div @click="handleLinkClick('/', 'HOME')">
                                 <AnimatedLinkwoArrow text="home" />
                             </div>

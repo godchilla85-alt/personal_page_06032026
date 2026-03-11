@@ -1,8 +1,8 @@
 <template>
   <div 
-    id="overlay-container" 
-    class="fixed inset-0 z-100 flex items-center justify-center bg-highlight-green opacity-0 pointer-events-none"
-  >
+  id="overlay-container" 
+  class="fixed inset-0 z-100 flex items-center justify-center bg-highlight-green opacity-0 pointer-events-none"
+>
     <h1 
       id="overlay-text" 
       class="text-6xl font-bold text-white uppercase tracking-widest opacity-0"

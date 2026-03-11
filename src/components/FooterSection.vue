@@ -6,7 +6,7 @@ Aos.init({ once: true });
 
 <template>
     <div class="relative min-h-[20vh] container bg-white/10 rounded-t-4xl backdrop-blur-sm shadow-xl pt-20"
-    data-aos='fade-up'
+    data-aos='fade-down'
             data-aos-duration="2000"
             data-aos-delay="50">
         
