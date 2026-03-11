@@ -32,7 +32,7 @@ const handleLinkClick = (path, name) => {
 </script>
 
 <template>
-    <nav class="sticky w-full top-0 z-100 bg-black/20 backdrop-blur-sm h-40 lg:h-22">
+    <nav class="sticky w-full top-0 z-90 bg-black/20 backdrop-blur-sm h-40 lg:h-22">
         <div class="pt-4 md:pb-8">
             <div class="container mx-auto px-4 md:px-6 lg:px-12">
                 <div class="flex flex-col lg:flex-row items-center justify-between">
