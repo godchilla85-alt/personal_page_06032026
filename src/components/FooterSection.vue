@@ -15,7 +15,7 @@ Aos.init({ once: true });
             
             <div class="grow flex flex-col justify-center">
                 <h3 class="text-4xl text-white/70">Überzeugt?</h3>
-                <a class="text-highlight-green text-[3em] font-bold" href="mailto:s.pohl85@hotmail.de">
+                <a class="text-highlight-green text-[3em] font-bold" href="mailto:moin@sebastian-pohl.eu">
                     Lass uns schnacken!
                 </a>
             </div>
