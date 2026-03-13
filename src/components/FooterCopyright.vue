@@ -2,7 +2,7 @@
 import AnimatedLinkwoArrow from './AnimatedLinkwoArrow.vue';
 </script>
 <template>
-    <div class="h-10 container flex flex-col lg:flex-row justify-between border-t">
+    <div class="h-25 lg:h-10 container flex flex-col lg:flex-row justify-between border-t">
         <div class="flex items-center w-full lg:w-2/5 justify-between">
             <AnimatedLinkwoArrow text="LinkedIn" href="https://www.linkedin.com/in/sebastian-pohl-09b42598/"></AnimatedLinkwoArrow>
             <AnimatedLinkwoArrow text="Behance" href="https://www.behance.net/spdesignfrontend"></AnimatedLinkwoArrow>
