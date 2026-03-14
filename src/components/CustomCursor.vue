@@ -1,22 +1,11 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 
-const HOVER_SELECTORS = [
-  "a", "button", "li", "input", "select", "textarea",
-  "[role='button']", "[role='link']",
-  "[tabindex]:not([tabindex='-1'])",
-  ".cursor-hover", "[data-cursor='hover']",
-].join(",");
-
-
 const cursorX = ref(0);
 const cursorY = ref(0);
-
-
+const isVisible = ref(false); 
 const isClicking = ref(false);
 const hovered = ref(false);
-const isTouch = ref(false);
-
 
 const targetX = ref(0);
 const targetY = ref(0);
@@ -26,12 +15,11 @@ const currentY = ref(0);
 const borderRef = ref(null);
 let rafId = null;
 
-const isHoverTarget = (target) => {
-  if (!(target instanceof Element)) return false;
-  return Boolean(target.closest(HOVER_SELECTORS));
-};
-
 const move = (e) => {
+  if (!isVisible.value) {
+    isVisible.value = true;
+    document.documentElement.classList.add('custom-cursor-active');
+  }
   targetX.value = e.clientX;
   targetY.value = e.clientY;
   cursorX.value = e.clientX;
@@ -44,109 +32,90 @@ const animate = () => {
   currentY.value += (targetY.value - currentY.value) * ease;
 
   if (borderRef.value) {
-    borderRef.value.style.left = `${currentX.value}px`;
-    borderRef.value.style.top = `${currentY.value}px`;
+    borderRef.value.style.transform = `translate3d(${currentX.value}px, ${currentY.value}px, 0) translate(-50%, -50%) scale(${hovered.value ? 1.8 : 1})`;
   }
   rafId = requestAnimationFrame(animate);
 };
 
-const handleDown = () => isClicking.value = true;
-const handleUp = () => isClicking.value = false;
-
-const handlePointerOver = (e) => {
-  if (isHoverTarget(e.target)) hovered.value = true;
-};
-
-const handlePointerOut = (e) => {
-  const fromHover = isHoverTarget(e.target);
-  const toHover = isHoverTarget(e.relatedTarget);
-  if (fromHover && !toHover) hovered.value = false;
-};
 
 onMounted(() => {
-  isTouch.value = "ontouchstart" in window || navigator.maxTouchPoints > 0;
-  if (isTouch.value) return;
-
-  document.addEventListener("mousemove", move);
-  document.addEventListener("mousedown", handleDown);
-  document.addEventListener("mouseup", handleUp);
-  document.addEventListener("pointerover", handlePointerOver);
-  document.addEventListener("pointerout", handlePointerOut);
+  if ("ontouchstart" in window) return;
+  window.addEventListener("mousemove", move);
+  window.addEventListener("mousedown", () => isClicking.value = true);
+  window.addEventListener("mouseup", () => isClicking.value = false);
+  document.addEventListener("pointerover", (e) => {
+    if (e.target.closest("a, button, .cursor-hover")) hovered.value = true;
+  });
+  document.addEventListener("pointerout", () => hovered.value = false);
   
   animate();
 });
 
 onUnmounted(() => {
-  if (rafId) cancelAnimationFrame(rafId);
-  document.removeEventListener("mousemove", move);
-  document.removeEventListener("mousedown", handleDown);
-  document.removeEventListener("mouseup", handleUp);
-  document.removeEventListener("pointerover", handlePointerOver);
-  document.removeEventListener("pointerout", handlePointerOut);
+  cancelAnimationFrame(rafId);
+  window.removeEventListener("mousemove", move);
+  document.documentElement.classList.remove('custom-cursor-active');
 });
 </script>
 
 <template>
-  <div v-if="!isTouch">
-    <div
-      id="cursor"
-      :class="{ 'clicking': isClicking }"
-      :style="{ 
-        left: `${cursorX}px`, 
-        top: `${cursorY}px`,
-        height: hovered ? '30px' : '6px',
-        width: hovered ? '30px' : '6px',
-        opacity: hovered ? '0.5' : '1'
-      }"
-    ></div>
-
-    <div 
-      id="cursor-border" 
-      ref="borderRef"
-      :style="{
-        borderColor: hovered ? '#6c733d' : '#fff',
-        transform: `translate(-50%, -50%) scale(${hovered ? 1.8 : 1})`
-      }"
-    ></div>
-  </div>
+  <Teleport to="body">
+    <div v-if="isVisible" class="custom-cursor-container">
+      <div 
+        id="cursor" 
+        :class="{ clicking: isClicking }"
+        :style="{ 
+          left: `${cursorX}px`, 
+          top: `${cursorY}px`,
+          width: hovered ? '30px' : '6px',
+          height: hovered ? '30px' : '6px'
+        }"
+      ></div>
+      
+      <div 
+        id="cursor-border" 
+        ref="borderRef"
+        :style="{ borderColor: hovered ? '#6c733d' : '#fff' }"
+      ></div>
+    </div>
+  </Teleport>
 </template>
 
 <style>
-
-html, body, a, button, * {
+.custom-cursor-active, 
+.custom-cursor-active * {
   cursor: none !important;
+}
+
+.custom-cursor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999999;
 }
 
 #cursor {
   position: fixed;
+  pointer-events: none;
+  background: #fff;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  pointer-events: none;
-  transition: 
-    background-color 0.2s ease, 
-    height 0.3s ease, 
-    width 0.3s ease, 
-    opacity 0.3s ease,
-    transform 0.1s ease;
-  z-index: 9999;
-  background-color: #fff;
+  transition: width 0.3s, height 0.3s, opacity 0.3s;
+  cursor: none !important; 
 }
 
 #cursor-border {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 35px;
   height: 35px;
-  background: transparent;
   border: 1px solid #fff;
   border-radius: 50%;
   pointer-events: none;
-  transition: border-color 0.25s ease, transform 0.25s ease;
-  z-index: 9998;
-  left: 0;
-  top: 0;
-}
-
-#cursor.clicking {
-  transform: translate(-50%, -50%) scale(1.2);
+  will-change: transform;
 }
 </style>
