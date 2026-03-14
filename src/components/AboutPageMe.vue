@@ -7,9 +7,11 @@
         data-aos='fade-up'
         data-aos-duration="2000"
         data-aos-delay="50">
-            <p class="text-4xl pr-0 lg:pr-10">Moinsen. Ich, Programmierer mit über 6 Jahren Erfahrung und einer großen Leidenschaft für Computer und die Technik dahinter. Mein Interesse begann bereits mit 15 Jahren, als ich angefangen habe, mich intensiver mit Computern zu beschäftigen. Seitdem habe ich unzählige Stunden auch privat investiert, um neue Technologien, Programmiersprachen und Programme zu lernen und mein Wissen ständig zu erweitern.
+            <p class="text-4xl pr-0 lg:pr-10">Moinsen. Als Quereinsteiger habe ich mein Hobby zum Beruf gemacht und arbeite inzwischen seit über sechs Jahren als Programmierer mit einem starken Fokus auf moderne Benutzeroberflächen und einem guten Gespür für UX.
 
-In meiner Freizeit spiele ich gerne Games, verbringe Zeit mit meinem Familie, höre Musik oder fiebere bei Spielen des Hamburger SV mit. Manchmal genieße ich es aber auch einfach, zu entspannen und abzuschalten.</p>
+Meine Begeisterung für Computer begann bereits mit 15 Jahren. Damals habe ich mit Microsoft FrontPage meine erste eigene Website gebaut - und war sofort von Webseiten und der Technik dahinter fasziniert. Seitdem hat mich das Thema nicht mehr losgelassen und ich beschäftige mich kontinuierlich mit neuen Technologien und Entwicklungen im Webbereich.</p>
+
+<p class="text-4xl pr-0 mt-10 lg:pr-10">In meiner Freizeit verbringe ich gerne Zeit mit meinem Familie, spiele Games, höre Musik, schiebe in Photoshop Pixel umher oder fiebere bei Spielen des Hamburger SV mit. Manchmal genieße ich es aber auch einfach, zu entspannen und abzuschalten.</p>
                 <AnimatedLink text="Mein Resume"  href="https://www.sebastian-pohl.eu/Resume_Sebastian_Pohl.pdf"></AnimatedLink>
        
         </div>
