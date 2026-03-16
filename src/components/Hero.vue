@@ -25,7 +25,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div class="min-h-screen container bg-white/10 rounded-4xl backdrop-blur-sm shadow-xl mt-10 lg:mt-0">
+    <div class="min-h-screen container bg-white/10 rounded-4xl backdrop-blur-sm shadow-xl">
         <div class="flex min-h-screen flex-col justify-center px-10">
             <div class="intro">
             <h1 class="text-highlight-green text-[5em] font-bold lg:text-[12em]"
