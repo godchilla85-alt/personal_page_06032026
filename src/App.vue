@@ -24,8 +24,15 @@
 import Navigation from './components/Navigation.vue'
 import CustomCursor from './components/CustomCursor.vue';
 import TransitionOverlay from './components/TransitionOverlay.vue';
+import { translations } from './assets/translations';
 
-import { ref, provide } from 'vue';
+import { ref, provide, computed } from 'vue';
+const currentLang = ref('de');
+const t = computed(() => translations[currentLang.value]);
+
+const toggleLanguage = () => {
+  currentLang.value = currentLang.value === 'de' ? 'en' : 'de';
+};
 
 const overlay = ref(null);
 
@@ -69,7 +76,9 @@ const particlesOptions = {
     }
   }
 };
-
+provide('t', t);
+provide('toggleLanguage', toggleLanguage);
+provide('currentLang', currentLang);
 </script>
 <style>
 

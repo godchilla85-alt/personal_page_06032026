@@ -3,6 +3,7 @@ import { inject } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import Logo from '../assets/img/logo.png';
 import AnimatedLinkwoArrow from './AnimatedLinkwoArrow.vue';
+import LanguageSwitch from './LanguageSwitch.vue';
 
 const router = useRouter();
 const route = useRoute(); 
@@ -29,6 +30,7 @@ const handleLinkClick = (path, name) => {
     playTransition(name, () => router.push(path));
   }
 };
+
 </script>
 
 <template>
@@ -52,6 +54,7 @@ const handleLinkClick = (path, name) => {
                             <div @click="handleLinkClick('/#work', 'WORK')">
                                 <AnimatedLinkwoArrow text="work" />
                             </div>
+                            <LanguageSwitch></LanguageSwitch>
                         </div>
                     </div>
                 </div>

@@ -1,26 +1,40 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, inject, watch, onUnmounted } from 'vue';
 import Typed from 'typed.js';
-import Aos from 'aos';
 
+const t = inject('t');
 const el = ref(null);
 let typed = null;
 
-onMounted(() => {
-     Aos.init({ once: true });
+const initTyped = () => {
+
+  if (typed) {
+    typed.destroy();
+  }
 
   typed = new Typed(el.value, {
-    strings: ["Web Designer", "Developer", "Nerdy", "Ehemann", "Vater", "Gamer", "Filme und Serien Junk", "Hobby Koch", "HSVer"],
-    typeSpeed: 150,
-    backSpeed: 20,
+    strings: t.value.hero.subtitle_array, 
+    typeSpeed: 100,
+    backSpeed: 50,
+    backDelay: 2000, 
     loop: true,
     showCursor: true,
     cursorChar: "|",
   });
+};
+
+onMounted(() => {
+  initTyped();
 });
 
+
+watch(t, () => {
+  initTyped();
+});
+
+
 onUnmounted(() => {
-  typed.destroy();
+  if (typed) typed.destroy();
 });
 </script>
 
@@ -31,15 +45,15 @@ onUnmounted(() => {
             <h1 class="text-highlight-green text-[5em] font-bold lg:text-[12em]"
             data-aos='fade-up'
             data-aos-duration="2000"
-            data-aos-delay="50">Moin.</h1>
+            data-aos-delay="50">{{ t.hero.title }}</h1>
             <h2 class="text-default-color font-bold text-3xl lg:text-[3em] lg:pl-5"
             data-aos='fade-up'
             data-aos-duration="2000"
-            data-aos-delay="500">Ich bin <span class="text-highlight-green">Sebastian.</span></h2>
+            data-aos-delay="500">{{ t.hero.subtitle }} <span class="text-highlight-green">{{ t.hero.subtitle_name }}</span></h2>
             <h2 class="text-default-color font-bold text-3xl lg:text-[3em] lg:pl-5"
             data-aos='fade-up'
             data-aos-duration="2000"
-            data-aos-delay="1000">Ich bin <span ref="el"></span></h2>
+            data-aos-delay="1000">{{ t.hero.subtitle_hardtext }} <span ref="el"></span></h2>
             </div>
         </div>     
   </div>

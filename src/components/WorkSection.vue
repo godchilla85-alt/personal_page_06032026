@@ -1,11 +1,12 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, inject } from 'vue';
 import Aos from 'aos';
 import movData from '../assets/img/movData-thumb.jpg';
 import shoeShop from '../assets/img/shoerus-thumb.jpg';
 import hamburgRedesign from '../assets/img/hamburg-redesign-thumb.jpg';
 import weatherApp from '../assets/img/weather_app_vue_thumb.png';
 import AnimatedLink from './AnimatedLink.vue';
+const t = inject('t');
 
 const workCards = ref([
     { title: "Shoe R Us UI Concept", type: "Concept, Interface", image: shoeShop, link: 'https://www.behance.net/gallery/245561621/SneakRus'},
@@ -32,7 +33,7 @@ const workCards = ref([
         <div class="h-full w-2/4 flex flex-col justify-center">
             <h3 class="text-[1.2em] lg:text-4xl mb-5">{{card.title}}</h3>
             <p class="text-[1em] lg:text-2xl">{{ card.type }}</p>
-            <AnimatedLink text="Anschauen" :href="card.link" />
+            <AnimatedLink :text="t.work.viewProject" :href="card.link" />
         </div>
         <div 
         class="h-full w-2/4 rounded-4xl bg-cover bg-center"

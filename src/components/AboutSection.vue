@@ -71,6 +71,7 @@ const handleInternalNavigation = (e) => {
   
   });
 };
+const t = inject('t');
 </script>
 
 <template>
@@ -79,12 +80,9 @@ const handleInternalNavigation = (e) => {
     <div class="absolute top-[15%] left-[30%] w-[50vw] h-[30vw] rounded-full bg-[#d6876d] opacity-45 blur-[250px] transform-gpu-blur"></div>
     <div class="absolute top-[20%] -left-[-70%] w-[80vw] h-[60vw] rounded-full bg-[#3150aa] opacity-45 blur-[240px] transform-gpu-blur"></div>
         <div class="w-full relative z-50 order-2 mt-10 lg:w-1/2 lg:mt-0">
-            <p ref="aboutRef" class="about-reveal text-4xl">Hi, Ich bin <span class="text-highlight-green">Sebastian Pohl,</span> Baujahr
-        85 und Webdesigner aus Hamburg. Seit 2015 baue ich interaktive Webseiten
-        und helfe Unternehmen, neue Features zu entwickeln und umzusetzen.
-        Sicherlich kann ich auch dir bei etwas helfen?</p>
+            <p ref="aboutRef" class="about-reveal text-4xl">{{ t.mainPage_about.text }}</p>
                 <AnimatedLink 
-                text="Mehr über mich"
+                :text="t.mainPage_about.link"
                 href="/about" 
                 @click.prevent="handleInternalNavigation"></AnimatedLink>
               

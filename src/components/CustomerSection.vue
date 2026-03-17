@@ -1,4 +1,5 @@
 <script setup>
+import { inject } from 'vue';
 import Airbus from '../assets/img/airbus-logo.png'; 
 import Jimdo from '../assets/img/jimdo-logo.png'; 
 import Accenture from '../assets/img/accenture-logo.png'; 
@@ -7,6 +8,7 @@ import Transfermarkt from '../assets/img/transfermarkt-logo.png';
 import Aos from 'aos';
 
  Aos.init({ once: true });
+ const t = inject('t');
 </script>
 
 <template>
@@ -15,7 +17,7 @@ import Aos from 'aos';
         data-aos-duration="2000"
         data-aos-delay="50">
         <div class="text-center">
-            <p>Unternehmen mit und für die ich Gearbeitet habe</p>
+            <p>{{ t.customer.text }}</p>
         </div>
     <div class="flex flex-row flex-wrap justify-around mt-5 lg:mt-20">
         <img class="h-6 m-3 lg:h-8" :src="Airbus">

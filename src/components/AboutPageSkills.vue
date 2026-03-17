@@ -10,8 +10,8 @@
     <div class="w-full lg:w-1/2">
       <h2 class="text-4xl font-bold"
         data-aos="fade-right"
-        data-aos-delay="1000"
-        data-aos-duration="1000">Meine Skills</h2>
+        data-aos-delay="500"
+        data-aos-duration="1000">{{ t.skills.headline }}</h2>
     </div>
 
     <div class="w-full flex flex-col gap-16 lg:w-1/2">
@@ -54,7 +54,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, inject } from 'vue';
 import Aos from 'aos';
 
 onMounted(() => {
@@ -71,6 +71,6 @@ const Frontend = ref(['HTML', 'CSS', 'SASS/LESS', 'Tailwind', 'JavaScript', 'Rea
 ]);
 const Software = ref(['Windows', 'Mac', 'Visual Studio Code', 'Photoshop', 'Illustrator', 'XD', 'Figma', 'PHP Storm', 'Sketch', 'After Effects', 'Git', 'Palantir'
 ]);
-
+const t = inject('t');
 
 </script>

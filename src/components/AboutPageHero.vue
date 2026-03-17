@@ -14,7 +14,7 @@ Aos.init({ once: true });
       
       <div class="w-full flex flex-col justify-center items-center px-10 text-center">
           <h1 class="text-4xl text-default-color">Sebastian Pohl</h1>
-          <h2 class="text-[2em] text-highlight-green font-bold lg:text-[4em]">Digital Designer / Web Developer</h2>
+          <h2 class="text-[2em] text-highlight-green font-bold lg:text-[4em]">Web Developer / Digital Designer</h2>
       </div>     
       
   </div>
