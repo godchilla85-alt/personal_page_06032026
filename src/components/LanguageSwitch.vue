@@ -61,7 +61,7 @@ const setLanguage = (lang) => {
 
     <div 
       ref="line"
-      class="absolute bottom-0 left-0 h-[2px] bg-highlight-green pointer-events-none"
+      class="absolute bottom-0 left-0 h-0.5 bg-highlight-green pointer-events-none"
       style="width: 0px;" 
     ></div>
 

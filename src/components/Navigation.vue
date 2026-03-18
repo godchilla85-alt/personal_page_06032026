@@ -40,11 +40,11 @@ const handleLinkClick = (path, name) => {
                 <div class="flex flex-col lg:flex-row items-center justify-between">
                     <div class="h-fit">
                         <div @click="handleLinkClick('/', 'HOME')">
-                            <img :src="Logo" alt="Logo" class="cursor-pointer">
+                            <img :src="Logo" alt="Logo" class="cursor-pointer" width="75">
                         </div>
                     </div>
-                    <div class="flex items-center gap-x-4.25 h-9">
-                        <div class="items-center justify-center flex gap-x-20 mt-10 lg:mt-0">
+                    <div class="flex items-center gap-x-4.25 h-15">
+                        <div class="items-center flex gap-x-10 lg:gap-x-20 pb-5">
                             <div @click="handleLinkClick('/', 'HOME')">
                                 <AnimatedLinkwoArrow text="home" />
                             </div>
