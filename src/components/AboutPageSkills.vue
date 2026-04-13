@@ -20,7 +20,8 @@
       data-aos="fade-up"
         :data-aos-delay="index * 100"
         data-aos-duration="1200">
-        <h3 class="text-2xl font-semibold opacity-90">Frontend Development</h3>
+        <h3 class="text-2xl font-semibold opacity-90">Frontend
+        </h3>
         <div class="flex flex-wrap gap-3">
           <span 
             v-for="skill in Frontend" 
@@ -36,7 +37,7 @@
       data-aos="fade-up"
         :data-aos-delay="index * 100"
         data-aos-duration="1200">
-        <h3 class="text-2xl font-semibold opacity-90">Software</h3>
+        <h3 class="text-2xl font-semibold opacity-90">Backend & Tools</h3>
         <div class="flex flex-wrap gap-3">
           <span 
             v-for="item in Software" 
@@ -66,10 +67,9 @@ onMounted(() => {
 
 
 
-const Frontend = ref(['HTML', 'CSS', 'SASS/LESS', 'Tailwind', 'JavaScript', 'React.js', 'Vue.js', 'jQuery', 'Responsive', 'Node.js',
-    'Vite.js', 'Next.js', 'MySQL', 'PostgreSQL'
+const Frontend = ref(['HTML', 'CSS', 'SASS/LESS', 'Tailwind', 'Bootstrap', 'JavaScript', 'React.js', 'Vue.js', 'jQuery', 'Responsive','Vite.js', 'Next.js'
 ]);
-const Software = ref(['Windows', 'Mac', 'Visual Studio Code', 'Photoshop', 'Illustrator', 'XD', 'Figma', 'PHP Storm', 'Sketch', 'After Effects', 'Git', 'Palantir'
+const Software = ref([ 'MySQL', 'PostgreSQL', 'Node.js', 'Git', 'Palantir', 'Figma', 'Visual Studio Code', 'Adobe Creative Suite', 'CI/CD', 'Sketch', 'REST'
 ]);
 const t = inject('t');
 

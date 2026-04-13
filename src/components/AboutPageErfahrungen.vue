@@ -37,9 +37,15 @@
           {{ item.timeframe }}
         </span>
         
-        <p class="text-white/80 leading-relaxed text-lg">
-          {{ item.work }}
-        </p>
+        <ul class="list-disc list-outside ml-5 flex flex-col gap-2">
+  <li 
+    v-for="(task, taskIndex) in item.work" 
+    :key="taskIndex"
+    class="text-white/80 leading-relaxed text-lg"
+  >
+    {{ task }}
+  </li>
+</ul>
       </div>
 
     </div>
@@ -66,39 +72,39 @@ const t = inject('t');
 const Erfahrungen = computed(() => [
   { 
     title: "Developer", 
-    company: "BPOut X GmbH", 
+    company: "BPOut X GmbH (Projekt: Airbus)", 
     timeframe: t.value.experience.bpout_timeframe, 
-    work: t.value.experience.bpout_text
+    work: t.value.experience.bpout_text_array
   },
   { 
     title: "Junior Developer", 
     company: "Transfermarkt GmbH", 
     timeframe: '01/2020 - 07/2020', 
-    work: t.value.experience.transfermarkt_text
+    work: t.value.experience.transfermarkt_text_array
   },
   { 
     title: "Web Developer", 
     company: "Surf Media GmbH", 
     timeframe: '11/2018 - 06/2019', 
-    work: t.value.experience.surf_media_text
+    work: t.value.experience.surf_media_text_array
   },
   { 
     title: "UI Designer", 
     company: "Syneo Tools GmbH", 
     timeframe: '12/2017 - 10/2018', 
-    work: t.value.experience.syneo_text
+    work: t.value.experience.syneo_text_array
   },
   { 
     title: "Product Manager", 
     company: "Esome Advertising", 
     timeframe: '02/2017 - 11/2017', 
-    work: t.value.experience.esome_text
+    work: t.value.experience.esome_text_array
   },
   { 
     title: "Webdesigner", 
     company: "Jimdo", 
     timeframe: '04/2015 - 05/2016', 
-    work: t.value.experience.jimdo_text
+    work: t.value.experience.jimdo_text_array
   }
 ]);
 

@@ -38,12 +38,48 @@ export const translations = {
     experience: {
         headline: "Meine Erfahrungen",
         bpout_text: "Erstellung von Dashboards für Airbus mit Hauseigener Software Skywise (basierend auf Palantir) und Ebam per HTML, CSS und JavaScript. Erstellung von Datasets anhand Palantir Contour. Aufbereitung von Daten anhand SQL und PostgreSQL. Umsetzung der Dashboards für Mobile Devices. Erstellung von Logos und Printmedien. Einarbeitung von Mitarbeitern. Kundenpräsentation von Projekten.",
+        bpout_text_array:[
+          "Entwicklung von global genutzten internen Dashboards für Airbus Produktionsstandorte in Deutschland, China, Frankreich, UK und den USA",
+          "Visualisierung großer Produktions- und Planungsdaten zur Unterstützung der Flugzeugfertigung und Standortplanung",
+          "Frontend-Entwicklung mit React, HTML5, CSS (Sass / Less) und Vanilla JavaScript",
+          "Entwicklung performanter UI-Komponenten zur Darstellung großer Datenmengen",
+          "Integration und Verarbeitung von Daten aus PostgreSQL und MySQL",
+          "Umsetzung komplexer Dashboard-Interfaces für operative Produktionsprozesse",
+          "Entwicklung zusätzlicher Anwendungen mit Vue.js in separaten Projekten",
+          "Enge Zusammenarbeit mit Stakeholdern aus Engineering und Operations"
+        ],
         bpout_timeframe: "seit 06/2021",
         transfermarkt_text: "Refreshing des Quellcodes per TypeScript und React.js. Testen der Elemente per Wallaby.js und Jest.js. Erstellung von Prototypen anhand eines vorgegeben UI per HTML, CSS und JavaScript.",
+        transfermarkt_text_array: [
+         "Weiterentwicklung der Plattform mit React und TypeScript",
+          "Testautomatisierung von UI-Komponenten mit Jest und Wallaby.js",
+          "Entwicklung neuer UI-Features und Prototypen"
+        ],
         surf_media_text: "Konzeption und Erstellung von Werbebannern, Newslettern sowie Landingpages für diverse Kunden als auch dessen Umsetzung anhand HTML, CSS und JavaScript.",
+        surf_media_text_array: [
+          "Entwicklung von Landingpages, Bannern und Newsletter-Layouts",
+          "Umsetzung responsiver Websites mit HTML, CSS und JavaScript",
+          "Technische Umsetzung von Kundenprojekten"
+        ],
         syneo_text: "Konzeption und Erstellung moderner Interfaces von Werbetafeln oder Verkaufsassistenten. Umsetzung per HTML und CSS der Plattform Scorelead (scorelead.de).",
+        syneo_text_array: [
+          "Konzeption und Design von Interfaces für interaktive Werbedisplays",
+          "Umsetzung der Designs mit HTML und CSS",
+          "Entwicklung von UI-Layouts für die Plattform Scorelead"
+        ],
         esome_text: "Qualitätsicherung sowie die Konzeption neuer Funktionen für hauseigene Tools, Schreiben von Bug Tickets sowie Erstellung von Image Videos.",
-        jimdo_text: "Konzeption sowie Umsetzung neuer Landingpages sowie neuer Features für den Webseiten Baukasten. Erstellung von Prototypen per HTML, CSS (Sass) und JavaScript."
+        esome_text_array: [
+          "Konzeption und Umsetzung von Web-Interfaces und Kampagnen-Landingpages",
+          "Entwicklung responsiver Frontends mit HTML, CSS und JavaScript",
+          "UI-Design und Prototyping für digitale Marketingkampagnen",
+          "Zusammenarbeit mit Design- und Marketing-Teams"
+        ],
+        jimdo_text: "Konzeption sowie Umsetzung neuer Landingpages sowie neuer Features für den Webseiten Baukasten. Erstellung von Prototypen per HTML, CSS (Sass) und JavaScript.",
+        jimdo_text_array: [
+          "Gestaltung und Umsetzung von Webdesigns für Kundenwebsites",
+         "Arbeit mit HTML, CSS und CMS-basierten Systemen",
+          "Unterstützung bei der Entwicklung benutzerfreundlicher Website-Layouts"
+        ]
     }
   },
   en: {
